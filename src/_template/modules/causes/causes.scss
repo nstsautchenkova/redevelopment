@@ -1,0 +1,84 @@
+.causes {
+    &--swiper-wrapper {
+        display: grid;
+        gap: 30px;
+        grid-template-columns: repeat(3, 450px);
+
+        @media (max-width: 1450px) {
+            display: flex;
+            gap: 0;
+        }
+    }
+
+    &--swiper-slide {
+        background: $white;
+        padding: 30px;
+        width: 450px;
+        height: auto;
+        position: relative;
+        overflow-x: clip;
+
+        @media (max-width: 1020px) {
+            width: 275px;
+            padding: 15px;
+        }
+
+        &::before {
+            content: '';
+            display: block;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            background: $white;
+            transform: scale(1);
+            transition: .3s all;
+        }
+
+        .img {
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+
+            svg {
+                max-width: 45px;
+                max-height: 45px;
+            }
+        }
+
+        p {
+            font-size: 14px;
+            line-height: 20px;
+            position: relative;
+            z-index: 2;
+
+            @media (max-width: 1020px) {
+                font-size: 13px;
+            }
+        }
+
+        &:hover {
+            background: $green;
+            box-shadow: 0 6px 24px rgb(33 150 83 / 25%);
+
+            &::before {
+                background: #219653;
+
+                transform: scale(1.1);
+                transition: .3s all;
+            }
+
+            .img {
+                path {
+                    fill: $white;
+                }
+            }
+
+            p {
+                color: $white;
+                ;
+            }
+        }
+    }
+}

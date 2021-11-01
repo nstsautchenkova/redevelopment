@@ -1,0 +1,67 @@
+.benefits {
+    box-shadow: 0px 6px 26px #F9F9F9;
+    padding: 39px 0;
+
+    @media (max-width: 1020px) {
+        padding: 15px 0;
+    }
+
+    &--swiper-slide {
+        text-align: center;
+        width: 283px;
+        position: relative;
+
+        @media (max-width: 1020px) {
+            width: 220px;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 24px;
+            background: #E5E5E5;
+            position: absolute;
+            top: 50%;
+            right: 0;
+            transform: translate(0, -50%);
+        }
+
+        &:last-child {
+            margin-right: 0;
+
+            &::after {
+                display: none;
+            }
+        }
+    }
+
+    .tit {
+        color: $green;
+        font-weight: 700;
+        font-size: 60px;
+        line-height: 73px;
+        margin-bottom: 10px;
+
+        @media (max-width: 1020px) {
+            font-size: 40px;
+            line-height: 49px;
+        }
+    }
+
+    .value {
+        font-weight: normal;
+        font-size: 14px;
+        line-height: 17px;
+        
+    }
+
+    .slider-scrollbar {
+        @media (max-width: 1450px) {
+            top: 58px;
+        }
+        @media (max-width: 1020px) {
+            top:30px;
+        }
+    }
+}
