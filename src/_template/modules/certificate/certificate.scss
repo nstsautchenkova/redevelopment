@@ -1,6 +1,14 @@
 .certificate {
     margin-top: 57px;
-    width: 100%;
+    margin: 57px auto 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+  @media (min-width: 1680px) {
+
+    }
 
     @media (max-width: 1020px) {
         margin-top: 47px;
@@ -11,12 +19,17 @@
     }
 
     .swiper-wrapper {
-        justify-content: center;
+        margin: 0 auto;
+        width: auto;
     }
 
     &__slide {
-        width: 280px;
+        width: 280px !important;
         transition: .3s all;
+        
+        &:last-child{
+            margin-right: 0 !important;
+        }
 
         @media (max-width: 1020px) {
             width: 184px;
@@ -29,6 +42,9 @@
         &:hover {
             transform: scale(1.14);
             box-shadow: 0px 6px 26px rgba(51, 51, 51, 0.3);
+            @media (max-width: 520px) {
+                transform: scale(1);
+            }
         }
     }
 

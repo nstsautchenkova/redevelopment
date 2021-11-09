@@ -60,10 +60,10 @@
 
         &:hover {
             background: $green;
-            box-shadow: 0 6px 24px rgb(33 150 83 / 25%);
+            box-shadow: 0 6px 26px rgba(45, 156, 219, 0.25);
 
             &::before {
-                background: #219653;
+                background: $green;
 
                 transform: scale(1.1);
                 transition: .3s all;
@@ -77,7 +77,6 @@
 
             p {
                 color: $white;
-                ;
             }
         }
     }

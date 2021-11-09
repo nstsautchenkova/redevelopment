@@ -1,20 +1,83 @@
 .working {
     &__row {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 30px 46px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 45px 0;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 8px;
+            height: 222px;
+            background: $green;
+            position: absolute;
+            right: 0;
+            top: 69px;
+
+            @media (max-width: 1450px) {
+                display: none;
+            }
+        }
     }
 
     &__number {
         color: $black;
-        font-weight: 900;
-        font-size: 30px;
-        line-height: 37px;
+        font-weight: 700;
         margin-bottom: 20px;
+        font-size: 18px;
+        line-height: 22px;
+        height: 37px;
+
+        @media (max-width: 1050px) {
+            font-size: 16px;
+            line-height: 20px;
+        }
+
+        span {
+            font-weight: 900;
+            font-size: 30px;
+            line-height: 37px;
+            margin-right: 10px;
+
+            @media (max-width: 1020px) {
+                font-size: 20px;
+                line-height: 24px;
+            }
+        }
 
         @media (max-width: 1020px) {
-            font-size: 20px;
-            line-height: 24px;
+            font-size: 14px;
+            line-height: 17px;
+        }
+    }
+
+    &__line {
+        margin-bottom: 20px;
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        &::before {
+            content: '';
+            display: block;
+            width: calc(100% + 86px);
+            height: 8px;
+            background: $green;
+            position: absolute;
+            left: -43px;
+        }
+
+        &::after {
+            content: '';
+            display: block;
+            width: 32px;
+            height: 32px;
+            border: 6px solid $green;
+            background: #fff;
+            position: relative;
+            z-index: 2;
         }
     }
 
@@ -53,12 +116,33 @@
     }
 
     .working--swiper-slide {
+        width: 470px;
+        padding: 0 43px;
+
         @media (max-width: 1450px) {
             width: 450px;
         }
 
         @media (max-width: 1020px) {
             width: 270px;
+        }
+    }
+
+    .working--swiper-4 {
+        order: 4;
+
+        .working__line {
+            &::before {
+                width: 703px;
+            }
+        }
+
+
+    }
+
+    .working--swiper-5 {
+        @media (max-width: 1450px) {
+            order: 5;
         }
     }
 }

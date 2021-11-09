@@ -2,6 +2,9 @@
 /*!   SLIDER.JS    !*/
 /*!              !*/
 
+var windowWidth = window.innerWidth;
+
+
 // .advantage--swiper
 $(".advantage--swiper-container").addClass('swiper-container');
 $(".advantage--swiper-wrapper").addClass('swiper-wrapper');
@@ -29,10 +32,14 @@ var advantage = new Swiper(".advantage--swiper-container", {
     }
 });
 
+
 // certificate
 var certificate = new Swiper(".certificate", {
     slidesPerView: 'auto',
     spaceBetween: 30,
+
+    centeredSlides: false,
+    initialSlide: 1,
 
     navigation: {
         nextEl: ".certificate .swiper-button-next",
@@ -42,12 +49,18 @@ var certificate = new Swiper(".certificate", {
     breakpoints: {
         1020: {
             spaceBetween: 30,
+            centeredSlides: false,
+            initialSlide: 1,
         },
         700: {
             spaceBetween: 20,
+            centeredSlides: true,
+            initialSlide: 3,
         },
         100: {
             spaceBetween: 15,
+            centeredSlides: true,
+            initialSlide: 3,
         },
     },
 });
@@ -155,6 +168,42 @@ const causesRemoveSwiper = () => {
     $(".causes--swiper-slide").removeClass('swiper-slide');
 }
 
+// .when-need
+
+const whenNeedAddSwiper = () => {
+    $(".when-need--swiper-container").addClass('swiper-container');
+    $(".when-need--swiper-wrapper").addClass('swiper-wrapper');
+    $(".when-need--swiper-slide").addClass('swiper-slide');
+
+    var whenNeed = new Swiper(".when-need--swiper-container", {
+        slidesPerView: 'auto',
+        spaceBetween: 30,
+        freeMode: {
+            enabled: true,
+            minimumVelocity: 0.2,
+            momentum: false,
+        },
+        scrollbar: {
+            el: '.when-need--swiper-container .swiper-scrollbar',
+            hide: false,
+            draggable: true,
+        },
+        breakpoints: {
+            1000: {
+                spaceBetween: 30,
+            },
+            100: {
+                spaceBetween: 15,
+            },
+        },
+    });
+}
+const whenNeedRemoveSwiper = () => {
+    $(".when-need--swiper-container").removeClass('swiper-container');
+    $(".when-need--swiper-wrapper").removeClass('swiper-wrapper');
+    $(".when-need--swiper-slide").removeClass('swiper-slide');
+}
+
 // .working--swiper
 const workingAddSwiper = () => {
     // .working
@@ -165,7 +214,6 @@ const workingAddSwiper = () => {
 
     var working = new Swiper(".working--swiper-container", {
         slidesPerView: 'auto',
-        spaceBetween: 30,
         freeMode: {
             enabled: true,
             minimumVelocity: 0.2,
@@ -206,18 +254,29 @@ const benefitsAddSwiper = () => {
     });
 }
 
+const benefitsRemoveSwiper = () => {
+    $(".benefits--swiper-container").removeClass('swiper-container');
+    $(".benefits--swiper-wrapper").removeClass('swiper-wrapper');
+    $(".benefits--swiper-slide").removeClass('swiper-slide');
+}
 
-var windowWidth = window.innerWidth;
 window.onresize = function () {
     if (window.matchMedia("(max-width: 1450px)").matches) {
         servicesAddSwiper();
         causesAddSwiper();
         workingAddSwiper();
-        benefitsAddSwiper();
+        whenNeedAddSwiper();
     } else {
         servicesRemoveSwiper();
         causesRemoveSwiper();
         workingRemoveSwiper();
+        whenNeedRemoveSwiper();
+    }
+
+    if (window.matchMedia("(max-width: 1350px)").matches) {
+        benefitsAddSwiper();
+    } else {
+        benefitsRemoveSwiper();
     }
 };
 
@@ -225,9 +284,16 @@ if (window.matchMedia("(max-width: 1450px)").matches) {
     servicesAddSwiper();
     causesAddSwiper();
     workingAddSwiper();
-    benefitsAddSwiper();
+    whenNeedAddSwiper();
 } else {
     servicesRemoveSwiper();
     causesRemoveSwiper();
     workingRemoveSwiper();
+    whenNeedRemoveSwiper();
+}
+
+if (window.matchMedia("(max-width: 1350px)").matches) {
+    benefitsAddSwiper();
+} else {
+    benefitsRemoveSwiper();
 }

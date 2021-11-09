@@ -227,7 +227,11 @@
                 -webkit-transition-duration: 0.8s;
                 -o-transition-duration: 0.8s;
                 transition-duration: 0.8s;
-                left: 0;
+                left: 15px;
+
+                @media (max-width: 1023px) {
+                    left: 0;
+                }
             }
         }
 

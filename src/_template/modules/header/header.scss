@@ -1,12 +1,15 @@
 .header {
     position: fixed;
     z-index: 99;
-    background: #FFFFFF;
-    box-shadow: 0px 8px 24px rgb(51 51 51 / 10%);
     top: 40px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    padding-left: 30px;
+    left: 0;
+    width: 100%;
+
+    &__row {
+        background: #FFFFFF;
+        box-shadow: 0px 8px 24px rgb(51 51 51 / 10%);
+        padding-left: 30px;
+    }
 
     @media (max-width: 1023px) {
         height: 80px;
@@ -14,7 +17,13 @@
         left: 0;
         transform: none;
         width: 100%;
-        padding: 15px;
+        padding: 0;
+
+        &__row{
+            width: 100%;
+            padding: 15px;
+            height: 80px;
+        }
     }
 
     .logo {
@@ -57,6 +66,8 @@
 
     .btn {
         padding: 32px 51px;
+        position: relative;
+        right: -1px;
 
         img {
             display: none;
@@ -78,4 +89,14 @@
         }
     }
 
+}
+
+.modal-open{
+    .header{
+        left: -9px;
+
+        @media (max-width: 1450px) {
+            left: 0;
+        }
+    }
 }
