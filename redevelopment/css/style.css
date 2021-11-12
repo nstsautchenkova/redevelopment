@@ -5724,6 +5724,7 @@ input::-webkit-inner-spin-button {
 
 .contacts__form .btn {
   width: 100%;
+  margin-top: 20px;
 }
 
 .when-need {
@@ -5743,12 +5744,22 @@ input::-webkit-inner-spin-button {
   overflow-x: clip;
 }
 
+.when-need--swiper-slide:hover .img img {
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .when-need--swiper-slide .img {
   width: 210px;
   height: 200px;
   margin-bottom: 20px;
   position: relative;
   z-index: 2;
+  overflow: hidden;
 }
 
 .when-need--swiper-slide .img img {
@@ -5756,6 +5767,9 @@ input::-webkit-inner-spin-button {
      object-fit: cover;
   width: 100%;
   height: 100%;
+  -webkit-transition: 0.3s all;
+  -o-transition: 0.3s all;
+  transition: 0.3s all;
 }
 
 .when-need--swiper-slide p {
@@ -6445,7 +6459,7 @@ input::-webkit-inner-spin-button {
   }
 
   .certificate__slide {
-    width: 184px;
+    width: 184px !important;
   }
 
   .certificate .slider-arrows {
@@ -6839,7 +6853,7 @@ input::-webkit-inner-spin-button {
 
 @media (max-width: 520px) {
   .certificate__slide {
-    width: 127px;
+    width: 127px !important;
   }
 
   .certificate__slide:hover {

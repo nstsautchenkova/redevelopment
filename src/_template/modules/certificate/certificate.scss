@@ -6,10 +6,6 @@
     align-items: center;
 
 
-  @media (min-width: 1680px) {
-
-    }
-
     @media (max-width: 1020px) {
         margin-top: 47px;
     }
@@ -32,11 +28,11 @@
         }
 
         @media (max-width: 1020px) {
-            width: 184px;
+            width: 184px !important;
         }
 
         @media (max-width: 520px) {
-            width: 127px;
+            width: 127px !important;
         }
 
         &:hover {

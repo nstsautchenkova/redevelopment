@@ -535,12 +535,12 @@ var certificate = new Swiper(".certificate", {
         700: {
             spaceBetween: 20,
             centeredSlides: true,
-            initialSlide: 3,
+            initialSlide: 2,
         },
         100: {
             spaceBetween: 15,
             centeredSlides: true,
-            initialSlide: 3,
+            initialSlide: 2,
         },
     },
 });
@@ -548,6 +548,7 @@ var certificate = new Swiper(".certificate", {
 // portfolio
 var portfolio = new Swiper(".portfolio", {
     slidesPerView: 1,
+    autoHeight: true,
     spaceBetween: 30,
     effect: "creative",
     creativeEffect: {
