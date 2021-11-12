@@ -5285,6 +5285,14 @@ input::-webkit-inner-spin-button {
   padding: 18px 35px;
 }
 
+.portfolio__slide {
+  height: auto;
+}
+
+.portfolio__row {
+  height: 100%;
+}
+
 .consultation__row {
   display: grid;
   gap: 60px;
@@ -6477,11 +6485,18 @@ input::-webkit-inner-spin-button {
 
   .portfolio__card {
     padding: 20px 15px;
-    height: auto;
   }
 
   .portfolio__card .mCSB_inside > .mCSB_container {
     padding-right: 15px;
+  }
+
+  .portfolio__description {
+    height: 500px;
+  }
+
+  .portfolio__description .description {
+    height: calc(100% - 81px);
   }
 
   .portfolio__description .bottom {

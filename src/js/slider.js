@@ -68,7 +68,6 @@ var certificate = new Swiper(".certificate", {
 // portfolio
 var portfolio = new Swiper(".portfolio", {
     slidesPerView: 1,
-    autoHeight: true,
     spaceBetween: 30,
     effect: "creative",
     creativeEffect: {

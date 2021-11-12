@@ -20,7 +20,6 @@
 
         @media (max-width: 1020px) {
             padding: 20px 15px;
-            height: auto;
 
             .mCSB_inside>.mCSB_container {
                 padding-right: 15px;
@@ -87,9 +86,17 @@
     }
 
     &__description {
+
+        @media (max-width: 1020px) {
+            height: 500px;
+        }
+
         .description {
             height: calc(100% - 61px);
             overflow: hidden;
+            @media (max-width: 1020px) {
+                height: calc(100% - 81px);
+            }
         }
 
         .label {
@@ -158,4 +165,11 @@
             }
         }
     }
+}
+
+.portfolio__slide{
+    height: auto;
+}
+.portfolio__row{
+    height: 100%;
 }
